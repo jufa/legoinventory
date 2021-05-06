@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this was a correction as they sen the wrong colour original order -->
+<INVENTORY>
+<ITEM>
+<ITEMTYPE>P</ITEMTYPE>
+<ITEMID>41531</ITEMID>
+<COLOR>1</COLOR>
+<MAXPRICE>-1.0000</MAXPRICE>
+<MINQTY>5</MINQTY>
+<CONDITION>X</CONDITION>
+<NOTIFY>N</NOTIFY>
+</ITEM>
+</INVENTORY>

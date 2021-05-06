@@ -43,7 +43,7 @@ export function pullFromInventory(partList, inventory) {
 }
 
 export function pushToInventory(partList, inventory) {
-  verbose('\n-------\nPushing to inventory:\n-------\n', partList);
+  console.log('\n-------\nPushing to inventory:\n-------\n', partList);
   const partListHash = createPartListHash(partList);
   const inventoryHash = createPartListHash(inventory);
   for (let p in partListHash) {
@@ -83,6 +83,7 @@ function bricklinkXmlToPartListParse(xml) {
     'MAXPRICE>',
     'CONDITION>',
     'NOTIFY>',
+    '<!--',
   ];
   for (let exclude of excludes) {
     lines = lines.filter( (line) => line.includes(exclude) ? '' : line );
@@ -94,6 +95,8 @@ function bricklinkXmlToPartListParse(xml) {
       part = []; //reset part parser
       let id = line.replace('<ITEMID>', '');
       id = id.replace('</ITEMID>', '');
+      const regex = /\s*/ig;
+      id = id.replace(regex, '');
       part.push(id);
     }
     if (line.includes('COLOR')) {
@@ -117,12 +120,11 @@ function bricklinkXmlToPartListParse(xml) {
 export function bricklinkXmlToPartList(filename) {
   try {
     const filepath = path.resolve(filename);
-    
     const data = fs.readFileSync(filepath, 'utf8')
     console.log('Bricklink file read:', filename);
     return bricklinkXmlToPartListParse(data);
   } catch (err) {
-    // console.error(err);
+    console.error(err);
   }
 }
 
@@ -172,6 +174,15 @@ export function partListToBricklinkXml(partList, name='INVENTORY') {
   let xml = header + `<${name}>\n\n` + partList.map( (part) => partToXml(part) ).join('\n') + `\n</${name}>\n`;
   console.log('\n--------\nBricklink wanted list format:\n----------\n',xml);
   return xml;
+}
+
+export function print(partList) {
+  console.log('\n---------\nPrinting parts list\n------------\n');
+  for (let part of partList) {
+    if(part[2] !== 0){
+      console.log(part);
+    }
+  }
 }
 
 
