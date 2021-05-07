@@ -17,12 +17,12 @@ import {
   partListToBricklinkXml,
   bricklinkXmlToPartList,
   print,
-} from './legoinventory.mjs'
+} from './legoInventory.mjs'
 
 import {
   createInventoryFromOrders,
   loadPartsListsFromFolder,
-} from './createinventoryfromorders.mjs'
+} from './createInventoryFromOrders.mjs'
 
 let inv = createInventoryFromOrders();
 
@@ -35,6 +35,8 @@ const {
   e755OraBp,
   e755AzuBp,
   e755Wht,
+  ex759Azu,
+  ex759Lim,
 } = loadPartsListsFromFolder();
 
 // for simplicity, lets combine the chassis and body panels here:
@@ -90,6 +92,8 @@ inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Wht,inv);
+inv = pullFromInventory(ex759Azu,inv);
+inv = pullFromInventory(ex759Lim,inv);
 
 //
 // needed to have some stock

@@ -11,7 +11,7 @@ import {
   e755azu,
   e755ora,
   e755wht,
-} from './partslists.mjs'
+} from './partsLists.mjs'
 
 import {
   pullFromInventory,
@@ -20,7 +20,7 @@ import {
   partListToBricklinkXml,
   bricklinkXmlToPartList,
   print,
-} from './legoinventory.mjs'
+} from './legoInventory.mjs'
 
 
 export function createInventoryFromOrders(folder='orders') {
