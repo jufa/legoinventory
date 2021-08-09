@@ -1,0 +1,18 @@
+<INVENTORY>
+  <!-- technic axle 2 -->
+	<ITEM>
+		<ITEMTYPE>P</ITEMTYPE>
+		<ITEMID>32062</ITEMID>
+		<ITEMKEY></ITEMKEY>
+		<COLOR>11</COLOR>
+		<MINQTY>7</MINQTY>
+	</ITEM>
+  <!-- technic Pin 3L with Friction Ridges Lengthwise -->
+  <ITEM>
+		<ITEMTYPE>P</ITEMTYPE>
+		<ITEMID>6558</ITEMID>
+		<ITEMKEY></ITEMKEY>
+		<COLOR>11</COLOR>
+		<MINQTY>9</MINQTY>
+	</ITEM>
+</INVENTORY>

@@ -1,15 +1,3 @@
-// import {
-//   inventory,
-//   e753RedBp,
-//   e753BluBp,
-//   e753WhtBp,
-//   e753Chassis,
-//   e755Chassis,
-//   e755AzuBp,
-//   e755OraBp,
-//   e755wht,
-// } from './partslists.mjs'
-
 import {
   pullFromInventory,
   pushToInventory,
@@ -34,7 +22,8 @@ const {
   e755Chassis,
   e755OraBp,
   e755AzuBp,
-  e755Wht,
+  e755WhtBlu,
+  e755WhtOra,
   ex759Azu,
   ex759Lim,
 } = loadPartsListsFromFolder();
@@ -46,9 +35,9 @@ const e753Wht = pushToInventory(e753WhtBp, e753Chassis);
 const e753Red = pushToInventory(e753RedBp, e753Chassis);
 const e753Blu = pushToInventory(e753BluBp, e753Chassis);
 
-// 
+//
 // Sales
-// 
+//
 
 // 14 mar 2021
 inv = pullFromInventory(e753Blu,inv);
@@ -88,10 +77,26 @@ inv = pullFromInventory(e753Wht,inv);
 // 2 may 2021
 inv = pullFromInventory(e753Red,inv);
 
-// Mine
+// 10 may 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+
+// 19 may 2021
+inv = pullFromInventory(e753Blu,inv);
+
+// 15 july 2021
+inv = pullFromInventory(e753Wht,inv);
+
+// 21 july 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+
+// 6 august 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+// EV and Rus
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Wht,inv);
+
 inv = pullFromInventory(ex759Azu,inv);
 inv = pullFromInventory(ex759Lim,inv);
 
@@ -100,8 +105,6 @@ inv = pullFromInventory(ex759Lim,inv);
 //
 
 // 753WHT
-inv = pullFromInventory(e753Wht,inv);
-inv = pullFromInventory(e753Wht,inv);
 inv = pullFromInventory(e753Wht,inv);
 inv = pullFromInventory(e753Wht,inv);
 
@@ -113,10 +116,23 @@ inv = pullFromInventory(e753Blu,inv);
 inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e753Red,inv);
 
-// 755WHT
-inv = pullFromInventory(e755Wht,inv);
-inv = pullFromInventory(e755Wht,inv);
-inv = pullFromInventory(e755Wht,inv);
+// 755WHTBLU
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+
 
 //
 // Damaged, lost, substandard
@@ -124,10 +140,19 @@ inv = pullFromInventory(e755Wht,inv);
 
 const dls = [
   ['43898', 15, 1],
-  ['43898', 98, 3],
+  ['43898', 98, 4],
   ['4073', 15, 1],
   ['4073', 98, 2],
 ];
+
+/** quick color ref
+1   white
+11  black
+85  dark bluish grey
+85  light bluish grey
+15  trans light blue
+98  trans orange
+*/
 
 inv = pullFromInventory(dls, inv);
 

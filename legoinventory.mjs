@@ -131,10 +131,15 @@ export function bricklinkXmlToPartList(filename) {
 export function createOrderList(inventory) {
   let ol = inventory.filter( (item) => item[2] < 0).map( (item) => [ item[0], item[1], -item[2] ] );
   if(ol.length === 0){
-    ol = "Nothing to order 😺";
+    return null;
   }
-  console.log('\n-------\nOrder list:\n-------\n', ol);
-  console.log('-------\n');
+  // https://www.bricklink.com/v2/catalog/catalogitem.page?P=54657#T=S&C=11&O={%22color%22:%2211%22,%22iconly%22:0}
+  console.log('\n-------\nOrder list:\n-------\npartno.\tcol\tqty\turl\n----------------------------------\n');
+  for (let part of ol) {
+    const url = `https://www.bricklink.com/v2/catalog/catalogitem.page?P=${part[0]}#T=S&C=${part[1]}`;
+    console.log(`${part[0]}\t${part[1]}\t${part[2]}\t${url}\n`);  
+  }
+  console.log('----------------------------------');
   return ol;
 }
 
