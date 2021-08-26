@@ -97,8 +97,25 @@ inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
 
+// Jeremy
 inv = pullFromInventory(ex759Azu,inv);
 inv = pullFromInventory(ex759Lim,inv);
+
+// 16 Aug 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+// 20 Aug 2021
+inv = pullFromInventory(e753Red,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+
+// 23 Aug 2021
+inv = pullFromInventory(e753Red,inv);
+inv = pullFromInventory(e753Blu,inv);
+
+
+
 
 //
 // needed to have some stock
@@ -110,22 +127,20 @@ inv = pullFromInventory(e753Wht,inv);
 
 // 753BLU
 inv = pullFromInventory(e753Blu,inv);
-inv = pullFromInventory(e753Blu,inv);
+// inv = pullFromInventory(e753Blu,inv);
 
 // 753RED
-inv = pullFromInventory(e753Red,inv);
-inv = pullFromInventory(e753Red,inv);
+// inv = pullFromInventory(e753Red,inv);
+// inv = pullFromInventory(e753Red,inv);
 
 // 755WHTBLU
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
 
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
 
-inv = pullFromInventory(e755Ora,inv);
+// inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
 
@@ -143,6 +158,8 @@ const dls = [
   ['43898', 98, 4],
   ['4073', 15, 1],
   ['4073', 98, 2],
+  ['61678', 5, 2],
+  ['3003', 11, 4]
 ];
 
 /** quick color ref
