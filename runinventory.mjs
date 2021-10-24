@@ -114,44 +114,61 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e753Blu,inv);
 
+// 16 Sep 2021
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+// 10 Oct 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+// 25 Oct 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+
 
 
 
 //
-// needed to have some stock
+// stock
 //
 
 // 753WHT
 inv = pullFromInventory(e753Wht,inv);
-inv = pullFromInventory(e753Wht,inv);
+// inv = pullFromInventory(e753Wht,inv);
 
 // 753BLU
 inv = pullFromInventory(e753Blu,inv);
 // inv = pullFromInventory(e753Blu,inv);
 
 // 753RED
-// inv = pullFromInventory(e753Red,inv);
+inv = pullFromInventory(e753Red,inv);
 // inv = pullFromInventory(e753Red,inv);
 
 // 755WHTBLU
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
 
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
 
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
 // inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
 
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
+// inv = pullFromInventory(e755Azu,inv);
 
 
 //
 // Damaged, lost, substandard
 //
+
+// part Number, colour, qty
 
 const dls = [
   ['43898', 15, 1],
@@ -159,11 +176,14 @@ const dls = [
   ['4073', 15, 1],
   ['4073', 98, 2],
   ['61678', 5, 2],
-  ['3003', 11, 4]
+  ['3003', 11, 4],
+  ['25269', 4, 1],
+  ['47755', 11, 1]
 ];
 
 /** quick color ref
 1   white
+4   orange
 11  black
 85  dark bluish grey
 85  light bluish grey
