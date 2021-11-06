@@ -126,16 +126,14 @@ inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
 
-
-
-
+// 6 Nov 2021
+inv = pullFromInventory(e755WhtBlu,inv);
 
 //
 // stock
 //
 
 // 753WHT
-inv = pullFromInventory(e753Wht,inv);
 // inv = pullFromInventory(e753Wht,inv);
 
 // 753BLU
@@ -149,7 +147,6 @@ inv = pullFromInventory(e753Red,inv);
 // 755WHTBLU
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
 
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
@@ -157,11 +154,10 @@ inv = pullFromInventory(e755WhtOra,inv);
 
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
-// inv = pullFromInventory(e755Ora,inv);
 
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
-// inv = pullFromInventory(e755Azu,inv);
+
 
 
 //
@@ -178,7 +174,9 @@ const dls = [
   ['61678', 5, 2],
   ['3003', 11, 4],
   ['25269', 4, 1],
-  ['47755', 11, 1]
+  ['47755', 11, 1],
+  ['61678', 7, 1],
+  ['41531', 11, 1]
 ];
 
 /** quick color ref
