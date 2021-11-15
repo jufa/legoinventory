@@ -129,6 +129,9 @@ inv = pullFromInventory(e755WhtOra,inv);
 // 6 Nov 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 
+// 14 Nov 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+
 //
 // stock
 //
@@ -146,15 +149,17 @@ inv = pullFromInventory(e753Red,inv);
 
 // 755WHTBLU
 inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
 
+// 755WHTORA
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
 
+// 755BLKORA
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
 
+// 755BLKAZU
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
 
