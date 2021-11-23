@@ -12,7 +12,7 @@ import {
   loadPartsListsFromFolder,
 } from './createInventoryFromOrders.mjs'
 
-let inv = createInventoryFromOrders();
+let inv = createInventoryFromOrders({includeOrdersNotReceived: true}); // not received order files end in nr, i.e. 1762451nr.xml
 
 const {
   e753Chassis,
@@ -132,6 +132,22 @@ inv = pullFromInventory(e755WhtBlu,inv);
 // 14 Nov 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 
+// 15 Nov 2021
+inv = pullFromInventory(e753Blu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+// 16 Nov 2021
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+// 17 Nov 2021
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+// 21 Nov 2021
+inv = pullFromInventory(e755WhtBlu,inv); // note this has black mirrors, entered into the DLS list below
+
+
 //
 // stock
 //
@@ -141,27 +157,53 @@ inv = pullFromInventory(e755WhtBlu,inv);
 
 // 753BLU
 inv = pullFromInventory(e753Blu,inv);
-// inv = pullFromInventory(e753Blu,inv);
 
 // 753RED
-inv = pullFromInventory(e753Red,inv);
+// inv = pullFromInventory(e753Red,inv);
 // inv = pullFromInventory(e753Red,inv);
 
 // 755WHTBLU
+// ordered Nov 16
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+// ordered Nov 17
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 
+
 // 755WHTORA
+// ordered Nov 16
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+// ordered Nov 17
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
 
 // 755BLKORA
+// ordered Nov 16
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+// ordered Nov 17
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
 
+
 // 755BLKAZU
+// ordered Nov 16
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
+// ordered Nov 17
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+
 
 
 
@@ -181,7 +223,8 @@ const dls = [
   ['25269', 4, 1],
   ['47755', 11, 1],
   ['61678', 7, 1],
-  ['41531', 11, 1]
+  ['41531', 11, 1],
+  ['x346', 11, 2]
 ];
 
 /** quick color ref

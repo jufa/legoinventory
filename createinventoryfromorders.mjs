@@ -23,19 +23,26 @@ import {
 } from './legoInventory.mjs'
 
 
-export function createInventoryFromOrders(folder='orders') {
+export function createInventoryFromOrders(opts={includeOrdersNotReceived: true}) {
+  const includeOrdersNotReceived = opts.includeOrdersNotReceived;
+  const folder = 'orders';
   let inv = [];
   let order;
 
   const orderFolder = `./${folder}/`;
 
   fs.readdirSync(orderFolder).forEach(orderFile => {
-    console.log('reading file', orderFile);
-    order = bricklinkXmlToPartList(`./${orderFolder}/${orderFile}`);
-    // console.log('\n\n\n-------\norderFile:');
-    // print(order);
-
-    inv = pushToInventory(order, inv);
+    console.log(orderFile, orderFile.endsWith('nr.xml'));
+    if (!orderFile.endsWith('.xml')) {
+      console.log('not an orderfile, SKIPPING: ', orderFile);
+    } else if (orderFile.endsWith('nr.xml') && includeOrdersNotReceived == false ) {
+      console.log('skipping file as NOT RECEIVED:', orderFile);
+    } else {
+      console.log('reading order file ', orderFile);
+      order = bricklinkXmlToPartList(`./${orderFolder}/${orderFile}`);
+      console.log('\n\n\n-------\norderFile: ' + orderFile);
+      inv = pushToInventory(order, inv);
+    }
   });
   return inv;
 }
