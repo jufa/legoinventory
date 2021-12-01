@@ -12,7 +12,18 @@ import {
   loadPartsListsFromFolder,
 } from './createInventoryFromOrders.mjs'
 
-let inv = createInventoryFromOrders({includeOrdersNotReceived: true}); // not received order files end in nr, i.e. 1762451nr.xml
+
+let rev = 0; // revenue
+
+function pushRev(count) {
+  if (count == 0) {
+    return;
+  }
+  const price = 32.75 // CAD
+  rev += price * count;
+}
+
+let inv = createInventoryFromOrders({includeOrdersNotReceived: false}); // not received order files end in nr, i.e. 1762451nr.xml
 
 const {
   e753Chassis,
@@ -45,107 +56,151 @@ inv = pullFromInventory(e753Wht,inv);
 inv = pullFromInventory(e753Blu,inv);
 inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e753Wht,inv);
+pushRev(5);
 
 // 30 mar 2021
 inv = pullFromInventory(e753Wht,inv);
+pushRev(1);
 
 // 3 apr 202
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
 
 // 2 apr 2021
 inv = pullFromInventory(e753Wht,inv);
+pushRev(1);
 
 // 5 apr 2021
 inv = pullFromInventory(e753Wht,inv);
+pushRev(1);
 
 // 16 apr 202
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
 
 // 25 apr 2021
 inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e753Blu,inv);
+pushRev(2);
 
 // 27 apr 2021
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
 
 // 30 apr 2021
 inv = pullFromInventory(e753Wht,inv);
+pushRev(1);
 
 // 2 may 2021
 inv = pullFromInventory(e753Red,inv);
+pushRev(1);
 
 // 10 may 2021
 inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(1);
 
 // 19 may 2021
 inv = pullFromInventory(e753Blu,inv);
+pushRev(1);
 
 // 15 july 2021
 inv = pullFromInventory(e753Wht,inv);
+pushRev(1);
 
 // 21 july 2021
 inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(1);
 
 // 6 august 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+pushRev(2);
 
 // EV and Rus
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
 
 // Jeremy
 inv = pullFromInventory(ex759Azu,inv);
 inv = pullFromInventory(ex759Lim,inv);
+pushRev(2);
 
 // 16 Aug 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+pushRev(2);
 
 // 20 Aug 2021
 inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e755Ora,inv);
-
+pushRev(2);
 
 // 23 Aug 2021
 inv = pullFromInventory(e753Red,inv);
 inv = pullFromInventory(e753Blu,inv);
+pushRev(2);
 
 // 16 Sep 2021
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+pushRev(2);
 
 // 10 Oct 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+pushRev(2);
 
 // 25 Oct 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+pushRev(2);
 
 // 6 Nov 2021
 inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(1);
 
 // 14 Nov 2021
 inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(1);
 
 // 15 Nov 2021
 inv = pullFromInventory(e753Blu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(2);
 
 // 16 Nov 2021
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
 
 // 17 Nov 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
+pushRev(2);
 
 // 21 Nov 2021
 inv = pullFromInventory(e755WhtBlu,inv); // note this has black mirrors, entered into the DLS list below
+pushRev(1);
+
+// 25 Nov 2021
+inv = pullFromInventory(e755WhtOra,inv); // note this has black mirrors, entered into the DLS list below
+inv = pullFromInventory(e755WhtBlu,inv); // note this has black mirrors, entered into the DLS list below
+pushRev(2);
+
+// 29 Nov 2021
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
+
+// 30 Nov 2021
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
+
 
 
 //
@@ -156,54 +211,44 @@ inv = pullFromInventory(e755WhtBlu,inv); // note this has black mirrors, entered
 // inv = pullFromInventory(e753Wht,inv);
 
 // 753BLU
+// total 1: ~33 revenue
 inv = pullFromInventory(e753Blu,inv);
+pushRev(1);
 
 // 753RED
 // inv = pullFromInventory(e753Red,inv);
 // inv = pullFromInventory(e753Red,inv);
 
 // 755WHTBLU
-// ordered Nov 16
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-// ordered Nov 17
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(7);
 
 
 // 755WHTORA
-// ordered Nov 16
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
-// ordered Nov 17
 inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
+pushRev(5)
 
 // 755BLKORA
-// ordered Nov 16
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
-// ordered Nov 17
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-
+pushRev(2)
 
 // 755BLKAZU
-// ordered Nov 16
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-// ordered Nov 17
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
-
+pushRev(4)
 
 
 
@@ -224,6 +269,7 @@ const dls = [
   ['47755', 11, 1],
   ['61678', 7, 1],
   ['41531', 11, 1],
+  ['41531', 1, 1],
   ['x346', 11, 2]
 ];
 
@@ -241,6 +287,6 @@ inv = pullFromInventory(dls, inv);
 
 const ol = createOrderList(inv);
 partListToBricklinkXml(ol);
-
+console.log(`Revenue on stock = CAD$ ${rev}`);
 
 
