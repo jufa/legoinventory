@@ -1,17 +1,6 @@
 import fs from 'fs';
 import * as path from 'path';
 
-import {
-  inventory,
-  e753red,
-  e753blu,
-  e753wht,
-  e753chassis,
-  e755chassis,
-  e755azu,
-  e755ora,
-  e755wht,
-} from './partsLists.mjs'
 
 import {
   pullFromInventory,

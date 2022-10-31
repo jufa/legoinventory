@@ -35,8 +35,16 @@ const {
   e755AzuBp,
   e755WhtBlu,
   e755WhtOra,
-  ex759Azu,
-  ex759Lim,
+  ex761BlkYelWall,
+  ex761BlkAzuWall,
+  ex761BlkLimWall,
+  ex761BlkPurWall,
+  ex761BlkPurAzuWall,
+  ex761WhtPurAzuWall,
+  ex761WhtAzuWall,
+  ex761WhtLimWall,
+  ex761PairBlkWhtPurAzu,
+
 } = loadPartsListsFromFolder();
 
 // for simplicity, lets combine the chassis and body panels here:
@@ -124,11 +132,6 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
 pushRev(2);
 
-// Jeremy
-inv = pullFromInventory(ex759Azu,inv);
-inv = pullFromInventory(ex759Lim,inv);
-pushRev(2);
-
 // 16 Aug 2021
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtOra,inv);
@@ -201,54 +204,181 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
 pushRev(2);
 
+// 12 Dec 2021
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(2);
+
+// 14 Dec 2021
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(2);
+
+// 17 Dec 2021
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755Azu,inv);
+pushRev(2);
+
+// 1 Jan 2022
+inv = pullFromInventory(e753Blu,inv);
+inv = pullFromInventory(e753Red,inv);
+pushRev(2);
+
+// 8 Jan
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
+pushRev(2);
+
+// 20 Jan
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(2)
+
+// 21 Jan
+inv = pullFromInventory(e755WhtBlu,inv);
+pushRev(1)
+
+//31 Jan
+inv = pullFromInventory(e755Ora,inv);
+
+// 8 feb
+inv = pullFromInventory(ex761BlkYelWall, inv);
+inv = pullFromInventory(ex761BlkAzuWall, inv);
+
+// 9 Feb
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+// 12 Feb
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+//12 Feb
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+//10 April
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+//30 May
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+//20 Oct
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+//28 Oct
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+//31 Oct
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
+
 
 
 //
 // stock
 //
 
+// inv = pullFromInventory(ex761PairBlkWhtPurAzu, inv);
+// inv = pullFromInventory(ex761BlkPurWall, inv);
+// inv = pullFromInventory(ex761BlkAzuWall, inv);
+// inv = pullFromInventory(ex761BlkYelWall, inv);
+// inv = pullFromInventory(ex761BlkAzuWall, inv);
+// inv = pullFromInventory(ex761BlkYelWall, inv);
+// inv = pullFromInventory(ex761BlkAzuWall, inv);
+// inv = pullFromInventory(ex761BlkYelWall, inv);
+// inv = pullFromInventory(ex761WhtLimWall, inv);
+// inv = pullFromInventory(ex761WhtAzuWall, inv);
+// inv = pullFromInventory(ex761BlkPurAzuWall, inv);
+// inv = pullFromInventory(ex761BlkPurAzuWall, inv);
+// inv = pullFromInventory(ex761WhtPurAzuWall, inv); 
+// 8*66
+
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+inv = pullFromInventory(e755WhtBlu,inv);
+
+
+
+
+// EX761Blk
+// inv = pullFromInventory(ex761BlkLim,inv);
+// inv = pullFromInventory(ex761BlkYel,inv);
+// inv = pullFromInventory(ex761BlkPurp,inv);
+// inv = pullFromInventory(ex761BlkAzu,inv);
+// pushRev(8);
+// inv = pullFromInventory(ex761BlkTurBp,inv);
+
+// EX759BlkLim
+// inv = pullFromInventory(ex759BlkLim,inv);
+// inv = pullFromInventory(ex759BlkYel,inv);
+// inv = pullFromInventory(ex759BlkOra,inv);
+// inv = pullFromInventory(ex759BlkPurp,inv);
+// inv = pullFromInventory(ex759BlkPink,inv);
+// inv = pullFromInventory(ex759BlkAzu,inv);
+
 // 753WHT
 // inv = pullFromInventory(e753Wht,inv);
 
 // 753BLU
-// total 1: ~33 revenue
-inv = pullFromInventory(e753Blu,inv);
-pushRev(1);
 
 // 753RED
-// inv = pullFromInventory(e753Red,inv);
-// inv = pullFromInventory(e753Red,inv);
 
 // 755WHTBLU
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-pushRev(7);
+// inv = pullFromInventory(e755WhtBlu,inv);
+// inv = pullFromInventory(e755WhtBlu,inv);
+// pushRev(2);
 
 
 // 755WHTORA
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-pushRev(5)
+// inv = pullFromInventory(e755WhtOra,inv);
+// pushRev(1)
 
 // 755BLKORA
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-pushRev(2)
+// inv = pullFromInventory(e755Ora,inv);
+// pushRev(2)
 
 // 755BLKAZU
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-pushRev(4)
+// inv = pullFromInventory(e755Azu,inv);
+// pushRev(1)
 
 
 
@@ -268,9 +398,11 @@ const dls = [
   ['25269', 4, 1],
   ['47755', 11, 1],
   ['61678', 7, 1],
+  ['41766', 11, 1],
   ['41531', 11, 1],
   ['41531', 1, 1],
-  ['x346', 11, 2]
+  ['x346', 11, 2],
+  ['32062', 11, 8] // axle 2L
 ];
 
 /** quick color ref
