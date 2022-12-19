@@ -44,6 +44,13 @@ const {
   ex761WhtAzuWall,
   ex761WhtLimWall,
   ex761PairBlkWhtPurAzu,
+  EX761KeithBlackPurpleBlue,
+  EX761KeithWhitePurpleBlue,
+  EX763ChromeLightBlue20221219,
+  EX763ChromeNeonGreen20221219,
+  RecognizerTransOrange20221219,
+  RecognizerTransLightBlue20221219,
+
 
 } = loadPartsListsFromFolder();
 
@@ -279,26 +286,47 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Ora,inv);
 
+// 5 Nov
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+// 15 Nov
+// inv = pullFromInventory(EX761KeithBlackPurpleBlue,inv);
+// inv = pullFromInventory(EX761KeithWhitePurpleBlue,inv);
+
+// 20 nov
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+// 25 Nov
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+// 1 Dec
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+// 6 Dec
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+// 12 Dec
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Azu,inv);
+
+// 13 Dec
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755Azu,inv);
 
 
 //
 // stock
 //
 
-// inv = pullFromInventory(ex761PairBlkWhtPurAzu, inv);
-// inv = pullFromInventory(ex761BlkPurWall, inv);
-// inv = pullFromInventory(ex761BlkAzuWall, inv);
-// inv = pullFromInventory(ex761BlkYelWall, inv);
-// inv = pullFromInventory(ex761BlkAzuWall, inv);
-// inv = pullFromInventory(ex761BlkYelWall, inv);
-// inv = pullFromInventory(ex761BlkAzuWall, inv);
-// inv = pullFromInventory(ex761BlkYelWall, inv);
-// inv = pullFromInventory(ex761WhtLimWall, inv);
-// inv = pullFromInventory(ex761WhtAzuWall, inv);
-// inv = pullFromInventory(ex761BlkPurAzuWall, inv);
-// inv = pullFromInventory(ex761BlkPurAzuWall, inv);
-// inv = pullFromInventory(ex761WhtPurAzuWall, inv); 
-// 8*66
 
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
@@ -307,15 +335,12 @@ inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
 
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-inv = pullFromInventory(e755WhtOra,inv);
-
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
@@ -333,53 +358,13 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
+inv = pullFromInventory(e755Ora,inv);
 
-inv = pullFromInventory(e755WhtBlu,inv);
-
-
-
-
-// EX761Blk
-// inv = pullFromInventory(ex761BlkLim,inv);
-// inv = pullFromInventory(ex761BlkYel,inv);
-// inv = pullFromInventory(ex761BlkPurp,inv);
-// inv = pullFromInventory(ex761BlkAzu,inv);
-// pushRev(8);
-// inv = pullFromInventory(ex761BlkTurBp,inv);
-
-// EX759BlkLim
-// inv = pullFromInventory(ex759BlkLim,inv);
-// inv = pullFromInventory(ex759BlkYel,inv);
-// inv = pullFromInventory(ex759BlkOra,inv);
-// inv = pullFromInventory(ex759BlkPurp,inv);
-// inv = pullFromInventory(ex759BlkPink,inv);
-// inv = pullFromInventory(ex759BlkAzu,inv);
-
-// 753WHT
-// inv = pullFromInventory(e753Wht,inv);
-
-// 753BLU
-
-// 753RED
-
-// 755WHTBLU
-// inv = pullFromInventory(e755WhtBlu,inv);
-// inv = pullFromInventory(e755WhtBlu,inv);
-// pushRev(2);
-
-
-// 755WHTORA
-// inv = pullFromInventory(e755WhtOra,inv);
-// pushRev(1)
-
-// 755BLKORA
-// inv = pullFromInventory(e755Ora,inv);
-// pushRev(2)
-
-// 755BLKAZU
-// inv = pullFromInventory(e755Azu,inv);
-// pushRev(1)
-
+inv = pullFromInventory(EX763ChromeLightBlue20221219,inv);
+inv = pullFromInventory(EX763ChromeNeonGreen20221219,inv);
+inv = pullFromInventory(RecognizerTransLightBlue20221219,inv);
+inv = pullFromInventory(RecognizerTransOrange20221219,inv);
 
 
 //
@@ -401,7 +386,7 @@ const dls = [
   ['41766', 11, 1],
   ['41531', 11, 1],
   ['41531', 1, 1],
-  ['x346', 11, 2],
+  ['41669', 11, 2],
   ['32062', 11, 8] // axle 2L
 ];
 
