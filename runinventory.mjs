@@ -291,8 +291,8 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 
 // 15 Nov
-// inv = pullFromInventory(EX761KeithBlackPurpleBlue,inv);
-// inv = pullFromInventory(EX761KeithWhitePurpleBlue,inv);
+inv = pullFromInventory(EX761KeithBlackPurpleBlue,inv);
+inv = pullFromInventory(EX761KeithWhitePurpleBlue,inv);
 
 // 20 nov
 inv = pullFromInventory(e755Azu,inv);
@@ -306,7 +306,7 @@ inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
 
 // 6 Dec
 inv = pullFromInventory(e755Azu,inv);
@@ -316,56 +316,44 @@ inv = pullFromInventory(e755Ora,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
 
 // 13 Dec
 inv = pullFromInventory(e755WhtBlu,inv);
 inv = pullFromInventory(e755Azu,inv);
+
+// 14 Dec
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
+
+// 16 Dev
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+// 4 Jan
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755WhtBlu,inv);
+
+// 5 Jan 2023
+inv = pullFromInventory(e755WhtBlu,inv);
+inv = pullFromInventory(e755WhtOra,inv);
+inv = pullFromInventory(e755Azu,inv);
+inv = pullFromInventory(e755Ora,inv);
 
 
 //
 // stock
 //
 
+inv = pullFromInventory(e755WhtBlu, inv, 0);
+inv = pullFromInventory(e755WhtOra, inv, 0);
+inv = pullFromInventory(e755Azu, inv, 0);
+inv = pullFromInventory(e755Ora, inv, 0);
 
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-inv = pullFromInventory(e755WhtBlu,inv);
-
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-inv = pullFromInventory(e755Azu,inv);
-
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-inv = pullFromInventory(e755Ora,inv);
-
-inv = pullFromInventory(EX763ChromeLightBlue20221219,inv);
-inv = pullFromInventory(EX763ChromeNeonGreen20221219,inv);
-inv = pullFromInventory(RecognizerTransLightBlue20221219,inv);
-inv = pullFromInventory(RecognizerTransOrange20221219,inv);
-
+inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 0);
+inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 0);
+inv = pullFromInventory(RecognizerTransLightBlue20221219, inv, 0);
+inv = pullFromInventory(RecognizerTransOrange20221219, inv, 0);
 
 //
 // Damaged, lost, substandard

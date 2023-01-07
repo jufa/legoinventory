@@ -1,6 +1,13 @@
 
 import fs from 'fs';
 import * as path from 'path';
+import {
+  parts
+} from './parts/parts.mjs'
+
+import {
+  colors
+} from './parts/colors.mjs'
 
 const verboseLogging = false;
 
@@ -26,15 +33,17 @@ function unpackPartListHash(partListHash) {
   return out;
 }
 
-export function pullFromInventory(partList, inventory) {
+export function pullFromInventory(partList, inventory, qty=1) {
   verbose('\n-------\nPulling from inventory:\n-------\n', partList);
   const partListHash = createPartListHash(partList);
   const inventoryHash = createPartListHash(inventory);
-  for (let p in partListHash) {
-    if(inventoryHash[p]) {
-      inventoryHash[p] = inventoryHash[p] - partListHash[p];
-    } else {
-      inventoryHash[p] = -partListHash[p];
+  for (let i=1; i<=qty; i++) {
+    for (let p in partListHash) {
+      if(p in inventoryHash) {
+        inventoryHash[p] = inventoryHash[p] - partListHash[p];
+      } else {
+        inventoryHash[p] = -partListHash[p];
+      }
     }
   }
   const inv = unpackPartListHash(inventoryHash);;
@@ -47,7 +56,7 @@ export function pushToInventory(partList, inventory) {
   const partListHash = createPartListHash(partList);
   const inventoryHash = createPartListHash(inventory);
   for (let p in partListHash) {
-    if(inventoryHash[p]) {
+    if(p in inventoryHash) {
       inventoryHash[p] = inventoryHash[p] + partListHash[p];
     } else {
       inventoryHash[p] = partListHash[p];
@@ -135,11 +144,24 @@ export function createOrderList(inventory) {
   }
   // https://www.bricklink.com/v2/catalog/catalogitem.page?P=54657#T=S&C=11&O={%22color%22:%2211%22,%22iconly%22:0}
   console.log('\n-------\nOrder list:\n-------\npartno.\tcol\tqty\turl\n----------------------------------\n');
+  let table = [];
   for (let part of ol) {
     const url = `https://www.bricklink.com/v2/catalog/catalogitem.page?P=${part[0]}#T=S&C=${part[1]}`;
-    console.log(`${part[0]}\t${part[1]}\t${part[2]}\t${url}\n`);  
+    const descr = parts[part[0]];
+    const color = colors[part[1]];
+    // console.log(`${part[0]}\t${part[1]}\t${part[2]}\t${color} ${descr}\t\t[${url}]`);
+    let row = {
+      "#": part[0] ,
+      "Clr": part[1],
+      "Qty": part[2],
+      "Color": color,
+      "Descr": descr,
+      "Brick Link": url
+    };
+    table.push(row);
   }
   console.log('----------------------------------');
+  console.table(table, );
   return ol;
 }
 
