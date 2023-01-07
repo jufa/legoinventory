@@ -35,6 +35,8 @@ const {
   e755AzuBp,
   e755WhtBlu,
   e755WhtOra,
+  e755WhtBluV02,
+  e755WhtOraV02,
   ex761BlkYelWall,
   ex761BlkAzuWall,
   ex761BlkLimWall,
@@ -345,10 +347,10 @@ inv = pullFromInventory(e755Ora,inv);
 // stock
 //
 
-inv = pullFromInventory(e755WhtBlu, inv, 3);
-inv = pullFromInventory(e755WhtOra, inv, 1);
-inv = pullFromInventory(e755Azu, inv, 0);
-inv = pullFromInventory(e755Ora, inv, 0);
+inv = pullFromInventory(e755WhtBluV02, inv, 5);
+inv = pullFromInventory(e755WhtOraV02, inv, 3);
+inv = pullFromInventory(e755Azu, inv, 10);
+inv = pullFromInventory(e755Ora, inv, 1);
 
 // inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
 // inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
