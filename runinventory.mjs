@@ -348,14 +348,14 @@ inv = pullFromInventory(e755Ora,inv);
 //
 
 inv = pullFromInventory(e755WhtBluV02, inv, 5);
-inv = pullFromInventory(e755WhtOraV02, inv, 3);
+inv = pullFromInventory(e755WhtOraV02, inv, 2);
 inv = pullFromInventory(e755Azu, inv, 10);
 inv = pullFromInventory(e755Ora, inv, 1);
 
-// inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
-// inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
-// inv = pullFromInventory(RecognizerTransLightBlue20221219, inv, 1);
-// inv = pullFromInventory(RecognizerTransOrange20221219, inv, 1);
+inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
+inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
+inv = pullFromInventory(RecognizerTransLightBlue20221219, inv, 1);
+inv = pullFromInventory(RecognizerTransOrange20221219, inv, 1);
 
 //
 // Damaged, lost, substandard
