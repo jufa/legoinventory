@@ -143,7 +143,7 @@ export function createOrderList(inventory) {
     return null;
   }
   // https://www.bricklink.com/v2/catalog/catalogitem.page?P=54657#T=S&C=11&O={%22color%22:%2211%22,%22iconly%22:0}
-  console.log('\n-------\nOrder list:\n-------\npartno.\tcol\tqty\turl\n----------------------------------\n');
+  // console.log('\n-------\nOrder list:\n-------\npartno.\tcol\tqty\turl\n----------------------------------\n');
   let table = [];
   for (let part of ol) {
     const url = `https://www.bricklink.com/v2/catalog/catalogitem.page?P=${part[0]}#T=S&C=${part[1]}`;
@@ -160,8 +160,50 @@ export function createOrderList(inventory) {
     };
     table.push(row);
   }
-  console.log('----------------------------------');
+  // console.log('----------------------------------');
   console.table(table, );
+  return ol;
+}
+
+export function listInventory(inventory) {
+
+  function sortMethod(c1, c2) {
+    let a = c1.Descr;
+    let b = c2.Descr;
+
+    if (a > b){
+      return 1;
+    }
+    if (a < b){
+      return -1;
+    }
+    return 0;
+  }
+
+  let ol = inventory.filter( (item) => item[2] > -99999).map( (item) => [ item[0], item[1], item[2] ] );
+  if(ol.length === 0){
+    return null;
+  }
+  // https://www.bricklink.com/v2/catalog/catalogitem.page?P=54657#T=S&C=11&O={%22color%22:%2211%22,%22iconly%22:0}
+  let table = [];
+  console.log("LIST OF INVENTORY")
+  for (let part of ol) {
+    const url = `https://www.bricklink.com/v2/catalog/catalogitem.page?P=${part[0]}#T=S&C=${part[1]}`;
+    const descr = parts[part[0]];
+    const color = colors[part[1]];
+    // console.log(`${part[0]}\t${part[1]}\t${part[2]}\t${color} ${descr}\t\t[${url}]`);
+    let row = {
+      "#": part[0] ,
+      "Clr": part[1],
+      "Qty": part[2],
+      "Color": color,
+      "Descr": descr,
+      "Brick Link": url
+    };
+    table.push(row);
+  }
+  const tableSorted = table.sort( sortMethod );
+  console.table(tableSorted);
   return ol;
 }
 

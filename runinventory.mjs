@@ -2,6 +2,7 @@ import {
   pullFromInventory,
   pushToInventory,
   createOrderList,
+  listInventory,
   partListToBricklinkXml,
   bricklinkXmlToPartList,
   print,
@@ -342,21 +343,6 @@ inv = pullFromInventory(e755WhtOra,inv);
 inv = pullFromInventory(e755Azu,inv);
 inv = pullFromInventory(e755Ora,inv);
 
-
-//
-// stock
-//
-
-inv = pullFromInventory(e755WhtBluV02, inv, 5);
-inv = pullFromInventory(e755WhtOraV02, inv, 2);
-inv = pullFromInventory(e755Azu, inv, 10);
-inv = pullFromInventory(e755Ora, inv, 1);
-
-inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
-inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
-inv = pullFromInventory(RecognizerTransLightBlue20221219, inv, 1);
-inv = pullFromInventory(RecognizerTransOrange20221219, inv, 1);
-
 //
 // Damaged, lost, substandard
 //
@@ -391,6 +377,24 @@ const dls = [
 */
 
 inv = pullFromInventory(dls, inv);
+
+// let's list current inventory first before figuring out what we need:
+listInventory(inv);
+
+//
+// stock
+//
+
+inv = pullFromInventory(e755WhtBluV02, inv, 10);
+inv = pullFromInventory(e755WhtOraV02, inv, 10);
+inv = pullFromInventory(e755Azu, inv, 10);
+inv = pullFromInventory(e755Ora, inv, 10);
+
+inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
+inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
+inv = pullFromInventory(RecognizerTransLightBlue20221219, inv, 1);
+inv = pullFromInventory(RecognizerTransOrange20221219, inv, 1);
+
 
 const ol = createOrderList(inv);
 partListToBricklinkXml(ol);
