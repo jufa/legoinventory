@@ -50,8 +50,8 @@ export function loadPartsListsFromFolder(folder='kits') {
     // print(kit);
     const key = kitFile.split('.')[0];
     kits[key] = kit;
-    console.log('kits');
-    console.log(kits);
+    // console.log('kits');
+    // console.log(kits);
   });
   return kits;
 }

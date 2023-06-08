@@ -9,12 +9,32 @@ import {
   colors
 } from './parts/colors.mjs'
 
+import {
+  alsoKnownAs
+} from './parts/alsoknownas.mjs'
+
 const verboseLogging = false;
 
 function verbose(message) {
   if (verboseLogging) {
     console.log(message);
   }
+}
+
+// there are several parts also known by multiple interchangeable part IDs.
+// This uses the alsoKnownAs array to map any of the possible IDs to a single id 
+// (the first element in the alsoKnownAs array by arbitrary convention)
+function standardizePartId(id) {
+  var idStandard = String(id);
+  for (let part of alsoKnownAs) {
+    if ( part.includes(id) ) {
+      idStandard = part[0];
+      if(id != idStandard) {
+        console.log(`   --- part id ${id} standardized as ${idStandard}`);
+      };
+    };
+  }
+  return idStandard;
 }
 
 function createPartListHash(partList) {
@@ -52,7 +72,7 @@ export function pullFromInventory(partList, inventory, qty=1) {
 }
 
 export function pushToInventory(partList, inventory) {
-  console.log('\n-------\nPushing to inventory:\n-------\n', partList);
+  verbose('\n-------\nPushing to inventory:\n-------\n', partList);
   const partListHash = createPartListHash(partList);
   const inventoryHash = createPartListHash(inventory);
   for (let p in partListHash) {
@@ -67,7 +87,7 @@ export function pushToInventory(partList, inventory) {
   return inv;
 }
 
-function bricklinkXmlToPartListParse(xml) {
+export function bricklinkXmlToPartListParse(xml) {
   // <?xml version="1.0" encoding="UTF-8"?>
   /* <INVENTORY>
     <ITEM>
@@ -106,6 +126,7 @@ function bricklinkXmlToPartListParse(xml) {
       id = id.replace('</ITEMID>', '');
       const regex = /\s*/ig;
       id = id.replace(regex, '');
+      id = standardizePartId(id);
       part.push(id);
     }
     if (line.includes('COLOR')) {
@@ -118,7 +139,7 @@ function bricklinkXmlToPartListParse(xml) {
       qty = qty.replace('</MINQTY>', '');
       part.push(Number(qty));
       // last item so push part onto partList:
-      console.log('adding part from bricklink partlist', part);
+      // console.log('adding part from bricklink partlist', part);
       partList.push(part);
       part = [];
     }
@@ -241,7 +262,6 @@ export function partListToBricklinkXml(partList, name='INVENTORY') {
     return xml;
   }
   let xml = header + `<${name}>\n\n` + partList.map( (part) => partToXml(part) ).join('\n') + `\n</${name}>\n`;
-  console.log('\n--------\nBricklink wanted list format:\n----------\n',xml);
   return xml;
 }
 
@@ -253,7 +273,3 @@ export function print(partList) {
     }
   }
 }
-
-
-
-

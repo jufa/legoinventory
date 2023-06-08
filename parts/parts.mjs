@@ -11052,6 +11052,7 @@ export const parts = {
   "4085a":"Plate Special 1 x 1 with Clip Vertical [Thin Open O Clip]",
   "4085b":"Plate Special 1 x 1 with Clip Vertical [Thin U Clip]",
   "4085c":"Plate Special 1 x 1 with Clip Vertical [Thick U Clip]",
+  "4085d":"Plate, Modified 1 x 1 with Open O Clip Thick (Vertical Grip)",
   "4086":"Fabuland Car Roof, Fixed Curve",
   "4088":"Brick Curved 1 x 4 x 2 Centre Stud Top [aka Fabuland Radiator]",
   "4088px1":"Brick Curved 1 x 4 x 2 Center Stud Top with Orient Arches, Minifigs Print",
