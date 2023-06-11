@@ -96,7 +96,7 @@ export function bricklinkXmlToPartListParse(xml) {
     <COLOR>156</COLOR>
     <MAXPRICE>-1.0000</MAXPRICE>
     <MINQTY>1</MINQTY>
-    <CONDITION>X</CONDITION>
+    <CONDITION>N</CONDITION>
     <NOTIFY>N</NOTIFY>
     </ITEM> 
   */
@@ -207,7 +207,7 @@ export function listInventory(inventory) {
   }
   // https://www.bricklink.com/v2/catalog/catalogitem.page?P=54657#T=S&C=11&O={%22color%22:%2211%22,%22iconly%22:0}
   let table = [];
-  console.log("LIST OF INVENTORY")
+  console.log("LIST OF INVENTORY ON HAND")
   for (let part of ol) {
     const url = `https://www.bricklink.com/v2/catalog/catalogitem.page?P=${part[0]}#T=S&C=${part[1]}`;
     const descr = parts[part[0]];
@@ -216,8 +216,8 @@ export function listInventory(inventory) {
     let row = {
       "#": part[0] ,
       "Clr": part[1],
-      "Qty": part[2],
       "Color": color,
+      "Qty": part[2],
       "Descr": descr,
       "Brick Link": url
     };
@@ -243,7 +243,7 @@ export function partListToBricklinkXml(partList, name='INVENTORY') {
     <COLOR>156</COLOR>
     <MAXPRICE>-1.0000</MAXPRICE>
     <MINQTY>1</MINQTY>
-    <CONDITION>X</CONDITION>
+    <CONDITION>N</CONDITION>
     <NOTIFY>N</NOTIFY>
     </ITEM> 
   */
@@ -256,7 +256,7 @@ export function partListToBricklinkXml(partList, name='INVENTORY') {
     xml += `  <COLOR>${part[1]}</COLOR>\n`;
     xml += `  <MAXPRICE>-1.0000</MAXPRICE>\n`;
     xml += `  <MINQTY>${part[2]}</MINQTY>\n`;
-    xml += `  <CONDITION>X</CONDITION>\n`;
+    xml += `  <CONDITION>N</CONDITION>\n`;
     xml += `  <NOTIFY>N</NOTIFY>\n`;
     xml += `</ITEM>\n`;
     return xml;

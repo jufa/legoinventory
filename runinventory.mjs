@@ -69,7 +69,11 @@ const {
   minirandomizerduo, // 2009 colors orange and azure
   RecognizerTransOrangeV2, // second version, cost reduced, May 2023
   RecognizerTransBlueV2,
-
+  ex761BlackOrangev2, // no wall
+  ex761BlackAzurev2, // no wall
+  em302v2whitebluemetallic, // special edition
+  em302v2purple,
+  em302v2lime,
 } = loadPartsListsFromFolder();
 
 // for simplicity, lets combine the chassis and body panels here:
@@ -432,6 +436,15 @@ inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
 //
 
 // part Number, colour, qty
+/** quick color ref
+1   white
+4   orange
+11  black
+85  dark bluish grey
+85  light bluish grey
+15  trans light blue
+98  trans orange
+*/
 
 const dls = [
   ['43898', 15, 1],
@@ -447,29 +460,23 @@ const dls = [
   ['41531', 11, 1],
   ['41531', 1, 1],
   ['41669', 11, 2],
-  ['32062', 11, 8] // axle 2L
+  ['32062', 11, 8], // axle 2L
 ];
 
 console.log("\n\nremoving substandard parts...");
+// note that since we provided the list above in partslist format, 
+// we need to convert it back to a bricklink XML format then back to a partslist in order to 
+// standardize part IDs, which is part of the bricklinktopaertslistparse function!
 var substandard = bricklinkXmlToPartListParse(
   partListToBricklinkXml(dls)
 );
 inv = pullFromInventory(substandard, inv);
 console.log("...complete\n\n");
 
-/** quick color ref
-1   white
-4   orange
-11  black
-85  dark bluish grey
-85  light bluish grey
-15  trans light blue
-98  trans orange
-*/
-
 
 // let's list current inventory first before figuring out what we need:
-// listInventory(inv);
+
+listInventory(inv);
 
 //
 // stock
@@ -489,16 +496,26 @@ inv = pullFromInventory(e755WhtBluV03withwall, inv, 10);
 inv = pullFromInventory(e755WhtOraV03withwall, inv, 10);
 
 // E755 Black
-inv = pullFromInventory(e755BlkBluV03withwall, inv, 10);
-inv = pullFromInventory(e755BlkOraV03withwall, inv, 10);
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 12);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 12);
 
 // E763 white and chrome XL cycles:
 inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
 inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
 
 // Randomizer v2
-inv = pullFromInventory(RecognizerTransOrangeV2, inv, 6);
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 5);
 inv = pullFromInventory(RecognizerTransBlueV2, inv, 0);
+
+// ex761 v2 Black 
+inv = pullFromInventory(ex761BlackOrangev2, inv, 1);
+inv = pullFromInventory(ex761BlackAzurev2, inv, 1);
+
+// lime and purple em 302s
+inv = pullFromInventory(em302v2purple, inv, 5);
+inv = pullFromInventory(em302v2lime, inv, 5);
+inv = pullFromInventory(em302v2whitebluemetallic, inv, 1);
+
 
 
 const ol = createOrderList(inv);
