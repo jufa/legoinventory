@@ -73,7 +73,13 @@ const {
   ex761BlackAzurev2, // no wall
   em302v2whitebluemetallic, // special edition
   em302v2purple,
+  EM302v2orange,
+  EM302v2azure,
   em302v2lime,
+  STS101Shuttlev01,
+  minirandomizerbluev1,
+  minirandomizerorangev1,
+  EM302v2whiteblue,
 } = loadPartsListsFromFolder();
 
 // for simplicity, lets combine the chassis and body panels here:
@@ -430,6 +436,27 @@ inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
 inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
 inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
 
+// 10 Jun 2023
+inv = pullFromInventory(em302duo, inv, 1);
+inv = pullFromInventory(minirandomizerduo, inv, 1);
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 1);
+
+// 13 Jun 2023
+// Jeff gift
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 1);
+
+// 22 Jun 2023
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+inv = pullFromInventory(e755WhtBluV03withwall, inv, 1);
+inv = pullFromInventory(e755WhtOraV03withwall, inv, 1);
+
+// 3 July 2023
+inv = pullFromInventory(EM302v2whiteblue, inv, 1);
+inv = pullFromInventory(em302v2purple, inv, 1);
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 1);
+inv = pullFromInventory(minirandomizerorangev1, inv, 1);
+inv = pullFromInventory(STS101Shuttlev01, inv, 1);
 
 //
 // Damaged, lost, substandard
@@ -475,8 +502,7 @@ console.log("...complete\n\n");
 
 
 // let's list current inventory first before figuring out what we need:
-
-listInventory(inv);
+// listInventory(inv);
 
 //
 // stock
@@ -485,39 +511,81 @@ listInventory(inv);
 // EM282 1982 micro cycle quartet with stands:
 inv = pullFromInventory(em282quartet, inv, 2);
 
-// em302duos, 8 pairs black with orange+blue
-inv = pullFromInventory(em302duo, inv, 8);
+// em302 v2
+inv = pullFromInventory(EM302v2orange, inv, 6);
+inv = pullFromInventory(EM302v2azure, inv, 6);
+inv = pullFromInventory(em302v2lime, inv, 4); //2 are short
+inv = pullFromInventory(em302v2purple, inv, 3); // 1 is short
+inv = pullFromInventory(EM302v2whiteblue, inv, 1); // not sure if short
 
 // minirandomizerduo 10 pairs orange+blue
-inv = pullFromInventory(minirandomizerduo, inv, 8);
-
-// E755 White
-inv = pullFromInventory(e755WhtBluV03withwall, inv, 10);
-inv = pullFromInventory(e755WhtOraV03withwall, inv, 10);
-
-// E755 Black
-inv = pullFromInventory(e755BlkBluV03withwall, inv, 12);
-inv = pullFromInventory(e755BlkOraV03withwall, inv, 12);
+inv = pullFromInventory(minirandomizerbluev1, inv, 9);
+inv = pullFromInventory(minirandomizerorangev1, inv, 8);
 
 // E763 white and chrome XL cycles:
 inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
 inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
 
+// E755 White
+inv = pullFromInventory(e755WhtBluV03withwall, inv, 3);
+inv = pullFromInventory(e755WhtOraV03withwall, inv, 3);
+
+// E755 Black
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 3);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 7);
+
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 3); // all short
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 2); // all short
+
 // Randomizer v2
-inv = pullFromInventory(RecognizerTransOrangeV2, inv, 5);
-inv = pullFromInventory(RecognizerTransBlueV2, inv, 0);
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 2);
+// inv = pullFromInventory(RecognizerTransBlueV2, inv, 0);
+
+
+// inventory adjustment July 2023 count:
+
+
+// --- inventory audit complete up to here --- //
 
 // ex761 v2 Black 
-inv = pullFromInventory(ex761BlackOrangev2, inv, 1);
-inv = pullFromInventory(ex761BlackAzurev2, inv, 1);
-
-// lime and purple em 302s
-inv = pullFromInventory(em302v2purple, inv, 5);
-inv = pullFromInventory(em302v2lime, inv, 5);
-inv = pullFromInventory(em302v2whitebluemetallic, inv, 1);
+// inv = pullFromInventory(ex761BlackOrangev2, inv, 1);
+// inv = pullFromInventory(ex761BlackAzurev2, inv, 1);
 
 
+const july2023Audit = [
+  ['43898', 15, 60], // radar 3x3 trans lt blue, claimed on hand 48, actual short 12
+  ['x346', 11, 42],  // bionicle tooth blk, claimed 39 on hand, actual short 3
+  ['3700', 11, 109],   // 1x2 brick with round hole, claimed 89 on hand, actual short 20
+  ['', 11, 0],
+  // ['61678', 5, 2],
+  // ['3003', 11, 4],
+  // ['25269', 4, 1],
+  // ['47755', 11, 1],
+  // ['61678', 7, 1],
+  // ['41766', 11, 1],
+  // ['41531', 11, 1],
+  // ['41531', 1, 1],
+  // ['41669', 11, 2],
+  // ['32062', 11, 8], // axle 2L
+];
 
+console.log("\n\nadjusting inventory for 2023 July audit...");
+// note that since we provided the list above in partslist format, 
+// we need to convert it back to a bricklink XML format then back to a partslist in order to 
+// standardize part IDs, which is part of the bricklinktopaertslistparse function!
+var july2023AuditPartsList = bricklinkXmlToPartListParse(
+  partListToBricklinkXml(july2023Audit)
+);
+inv = pullFromInventory(july2023AuditPartsList, inv);
+console.log("...complete\n\n");
+
+
+
+console.log("\n\nINVENTORY AFTER STOCK REMOVED:");
+listInventory(inv);
+
+
+console.log("\n\nPARTS LIST TO ORDER:");
 const ol = createOrderList(inv);
 const wantedList = partListToBricklinkXml(ol);
 console.log('\n--------\nBricklink wanted list format:\n----------\n', wantedList);

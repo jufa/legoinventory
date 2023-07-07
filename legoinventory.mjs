@@ -71,15 +71,17 @@ export function pullFromInventory(partList, inventory, qty=1) {
   return inv;
 }
 
-export function pushToInventory(partList, inventory) {
+export function pushToInventory(partList, inventory, qty=1) {
   verbose('\n-------\nPushing to inventory:\n-------\n', partList);
   const partListHash = createPartListHash(partList);
   const inventoryHash = createPartListHash(inventory);
-  for (let p in partListHash) {
-    if(p in inventoryHash) {
-      inventoryHash[p] = inventoryHash[p] + partListHash[p];
-    } else {
-      inventoryHash[p] = partListHash[p];
+  for (let i=1; i<=qty; i++) {
+    for (let p in partListHash) {
+      if(p in inventoryHash) {
+        inventoryHash[p] = inventoryHash[p] + partListHash[p];
+      } else {
+        inventoryHash[p] = partListHash[p];
+      }
     }
   }
   const inv = unpackPartListHash(inventoryHash);;
@@ -144,6 +146,10 @@ export function bricklinkXmlToPartListParse(xml) {
       part = [];
     }
   }
+  const partCount = partList.reduce(
+    (partCount, entry) => partCount + entry[2], 0
+  );
+  console.log(`total parts: ${partCount}\nunique parts: ${partList.length} `);
   return partList;
 }
 

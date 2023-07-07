@@ -21,17 +21,19 @@ export function createInventoryFromOrders(opts={includeOrdersNotReceived: true})
   const orderFolder = `./${folder}/`;
 
   fs.readdirSync(orderFolder).forEach(orderFile => {
-    console.log(orderFile, orderFile.endsWith('nr.xml'));
+    console.log('\n\n-------');
+    console.log(`${orderFile}: ${orderFile.endsWith('nr.xml')?"NOT received":"Received"}`);
     if (!orderFile.endsWith('.xml')) {
       console.log('not an orderfile, SKIPPING: ', orderFile);
     } else if (orderFile.endsWith('nr.xml') && includeOrdersNotReceived == false ) {
       console.log('skipping file as NOT RECEIVED:', orderFile);
     } else {
-      console.log('reading order file ', orderFile);
+      console.log('processing order file into inventory ', orderFile);
       order = bricklinkXmlToPartList(`./${orderFolder}/${orderFile}`);
-      console.log('\n\n\n-------\norderFile: ' + orderFile);
+      
       inv = pushToInventory(order, inv);
     }
+    console.log('-------');
   });
   return inv;
 }
@@ -42,14 +44,15 @@ export function loadPartsListsFromFolder(folder='kits') {
   let kits = {};
 
   const kitFolder = `./${folder}/`;
-
+  console.log("\n------------\nLoading in kits from xml:")
   fs.readdirSync(kitFolder).forEach(kitFile => {
-    console.log('reading file', kitFile);
+    console.log(`\n------------\nreading file ${kitFile}`);
     kit = bricklinkXmlToPartList(`./${kitFolder}/${kitFile}`);
     // console.log('\n\n\n-------\nkitFile:');
     // print(kit);
     const key = kitFile.split('.')[0];
     kits[key] = kit;
+    console.log("------------\n");
     // console.log('kits');
     // console.log(kits);
   });
