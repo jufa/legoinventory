@@ -9,4 +9,5 @@ export const alsoKnownAs = [
  ["44375", "44375a", "44375b", "45729a"], // 6x6 dish
  ["3004", " 93792"], // 1x2 brick various bottom supports
  ["14769", "83056"], // 2x2 round tile
+ ["15573", "3794b"], // Plate Special 1 x 2 with 1 Stud with Groove (Jumper)
 ]

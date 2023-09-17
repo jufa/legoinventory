@@ -35,15 +35,28 @@ const {
   minirandomizerorangev1,
   EM302v2whiteblue,
   pairmountingbasev2, // v2 mounting base for two EM302s
+  e765v1blue,
+  e765v1orange,
+  E765blackorangev3,
+  E765blackbluev3,
+  E765blackorangev5,
+  E765blackbluev5,
+  E755WHTBLUv04, // these have the quarter round tile exhaust
+  E755WHTORAv04, // these have the quarter round tile exhaust
+  Voyager_TOSA_compatible_v1,
+  shuttle_launch_TOSA_compatible_v1,
+  Hubble_TOSA_compatible_v1,
 } = loadPartsListsFromFolder();
 
 
 // let's list current inventory first before figuring out what we need:
 // listInventory(inv);
 
-//
-// parts
-//
+/*
+
+parts
+
+*/
 
 
 // EM282 1982 micro cycle quartet with stands:
@@ -79,50 +92,12 @@ inv = pushToInventory(e755BlkOraV03withwall, inv, 2); // all short
 inv = pushToInventory(RecognizerTransOrangeV2, inv, 2);
 // inv = pullFromInventory(RecognizerTransBlueV2, inv, 0);
 
-// shuttle STS101
+// STS101
 inv = pushToInventory(STS101Shuttlev01, inv, 1);
 
-
-
-
-
-
-// kitted out stock on hand:
-
-// EM282 1982 micro cycle quartet with stands:
-inv = pullFromInventory(em282quartet, inv, 2);
-
-// em302 v2
-inv = pullFromInventory(EM302v2orange, inv, 6);
-inv = pullFromInventory(EM302v2azure, inv, 6);
-inv = pullFromInventory(em302v2lime, inv, 4); // 2 are short
-inv = pullFromInventory(em302v2purple, inv, 3); // 1 is short
-inv = pullFromInventory(EM302v2whiteblue, inv, 1); // not sure if short
-
-// minirandomizerduo 10 pairs orange+blue
-inv = pullFromInventory(minirandomizerbluev1, inv, 9);
-inv = pullFromInventory(minirandomizerorangev1, inv, 8);
-
-// E763 white and chrome XL cycles:
-inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
-inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
-q
-// E755 White
-inv = pullFromInventory(e755WhtBluV03withwall, inv, 3);
-inv = pullFromInventory(e755WhtOraV03withwall, inv, 3);
-
-// E755 Black
-inv = pullFromInventory(e755BlkBluV03withwall, inv, 3);
-inv = pullFromInventory(e755BlkOraV03withwall, inv, 7);
-
-inv = pullFromInventory(e755BlkBluV03withwall, inv, 3); // all short
-inv = pullFromInventory(e755BlkOraV03withwall, inv, 2); // all short
-
-// Randomizer v2
-inv = pullFromInventory(RecognizerTransOrangeV2, inv, 2);
-
-// shuttle STS101
-inv = pullFromInventory(STS101Shuttlev01, inv, 1);  // short
+// minirandomizer
+inv = pushToInventory(minirandomizerbluev1, inv, 9);
+inv = pushToInventory(minirandomizerorangev1, inv, 8);
 
 // shorts for e755v3
 var short = [
@@ -225,11 +200,66 @@ var loose = [
   ['4085',1,42], //
   ['11291',1,29], //
   ['15100',1,26], //
+  ['4073',98,2], //
 ];
 transformed = bricklinkXmlToPartListParse( partListToBricklinkXml(loose) );
 inv = pushToInventory(transformed, inv);
 
-console.log("\n\nADDING EXTRA WANTED KITS:");
+
+/*
+
+kitted out stock on hand
+
+*/
+
+// EM282 1982 micro cycle quartet with stands:
+inv = pullFromInventory(em282quartet, inv, 2);
+
+// em302 v2
+inv = pullFromInventory(EM302v2orange, inv, 3);
+inv = pullFromInventory(EM302v2azure, inv, 4);
+inv = pullFromInventory(em302v2lime, inv, 4); 
+inv = pullFromInventory(em302v2purple, inv, 3);
+inv = pullFromInventory(EM302v2whiteblue, inv, 1);
+
+// minirandomizer
+inv = pullFromInventory(minirandomizerbluev1, inv, 8);
+inv = pullFromInventory(minirandomizerorangev1, inv, 7);
+
+// E763 white and chrome XL cycles:
+inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 0);
+inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 0);
+
+// E755 White
+inv = pullFromInventory(E755WHTBLUv04, inv, 6);
+inv = pullFromInventory(E755WHTORAv04, inv, 6);
+
+// E755 Black
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 10);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 6);
+
+// Randomizer v2
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 4);
+inv = pullFromInventory(RecognizerTransBlueV2, inv, 4);
+
+// mounting bases for 302 quartets
+inv = pullFromInventory(pairmountingbasev2, inv, 6);
+
+// E765 Black
+// inv = pullFromInventory(E765blackbluev5, inv, 2);
+// inv = pullFromInventory(E765blackorangev5, inv, 2);
+
+// TOSA shuttle launch
+// inv = pullFromInventory(shuttle_launch_TOSA_compatible_v1, inv, 1);
+
+// TOSA Voyager
+// inv = pullFromInventory(Voyager_TOSA_compatible_v1, inv, 1);
+
+// TOSA Hubble
+// inv = pullFromInventory(Hubble_TOSA_compatible_v1, inv, 1);
+
+
+// console.log("\n\nADDING EXTRA WANTED KITS:");
 // E755 White
 // inv = pullFromInventory(e755WhtBluV03withwall, inv, 6);
 // inv = pullFromInventory(e755WhtOraV03withwall, inv, 6);
@@ -238,17 +268,104 @@ console.log("\n\nADDING EXTRA WANTED KITS:");
 // inv = pullFromInventory(e755BlkBluV03withwall, inv, 6);
 // inv = pullFromInventory(e755BlkOraV03withwall, inv, 7);
 
-inv = pullFromInventory(pairmountingbasev2, inv, 6);
 
-// // randomizer XL
-// inv = pullFromInventory(RecognizerTransBlueV2, inv, 2);
-// inv = pullFromInventory(RecognizerTransOrangeV2, inv, 2);
+
+
+/*
+
+SALES
+
+*/
+
+// July 8, 2023
+inv = pullFromInventory(STS101Shuttlev01, inv, 1);
+
+// // minirandomizer
+inv = pullFromInventory(minirandomizerbluev1, inv, 1);
+inv = pullFromInventory(minirandomizerorangev1, inv, 1);
+
+// July 9, 2023
+inv = pullFromInventory(e755WhtBluV03withwall, inv, 1);
+
+// July 15, 2023
+inv = pullFromInventory(EM302v2azure, inv, 1);
+
+// July 18, 2023
+inv = pullFromInventory(EM302v2azure, inv, 1);
+inv = pullFromInventory(EM302v2orange, inv, 2);
+
+// July 22, 2023
+inv = pullFromInventory(E765blackbluev3, inv, 1);
+inv = pullFromInventory(E765blackorangev3, inv, 1);
+
+// July 23, 2023
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 1);
+
+// August 10, 2023
+inv = pullFromInventory(EM302v2orange, inv, 1);
+
+//  August 11, 2023
+inv = pullFromInventory(e755WhtBluV03withwall, inv, 1);
+inv = pullFromInventory(e755WhtOraV03withwall, inv, 1);
+
+// August 14, 2023
+inv = pullFromInventory(E765blackbluev3, inv, 1);
+inv = pullFromInventory(E765blackorangev3, inv, 1);
+
+
+//-------------
+
+// Sept 4, 2023
+inv = pullFromInventory(EX763ChromeLightBlue20221219, inv, 1);
+inv = pullFromInventory(e755WhtBluV03withwall, inv, 1);
+inv = pullFromInventory(e755WhtOraV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
+inv = pullFromInventory(RecognizerTransBlueV2, inv, 1);
+
+// Sept 5, 2023
+inv = pullFromInventory(RecognizerTransBlueV2, inv, 1);
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 1);
+
+// Sept 6, 2023
+inv = pullFromInventory(EX763ChromeNeonGreen20221219, inv, 1);
+inv = pullFromInventory(RecognizerTransOrangeV2, inv, 1);
+
+// Sept 9, 2023
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
+
+// Sept 10, 2023
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
+
+// Sept 13, 2023
+inv = pullFromInventory(e755WhtOraV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+
+// Sept 14, 2023
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
+
+// Sept 15, 2023
+inv = pullFromInventory(e755BlkBluV03withwall, inv, 1);
+inv = pullFromInventory(e755BlkOraV03withwall, inv, 1);
+inv = pullFromInventory(E755WHTBLUv04, inv, 1);
+inv = pullFromInventory(E755WHTORAv04, inv, 1);
+
+
+
+
+
+
+
+
+
 
 
 
 console.log("\n\nCOUNTED INVENTORY AFTER ALL ADJUSTMENTS:");
 listInventory(inv);
-
 
 
 console.log("\n\nPARTS LIST TO ORDER:");
