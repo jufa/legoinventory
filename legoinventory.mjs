@@ -164,6 +164,27 @@ export function bricklinkXmlToPartList(filename) {
   }
 }
 
+export function split_kit(inventory, colorArray) {
+  // return two arrays, the first a parts list of color matching the color array provided
+  // the second the remaining parts
+  let invExtracted, invRemainder;
+  // console.log(inventory, colorArray);
+  const colorIndex = 1;
+  invExtracted = inventory.filter((brick) => colorArray.indexOf(brick[colorIndex]) > -1); // for each brick, is the color of the brick listed in the colorArrayconsole.log(inventory, colorArray)
+  invRemainder = inventory.filter((brick) => colorArray.indexOf(brick[colorIndex]) == -1); // inverse of that list
+  // console.log(`parts matching colors in ${colorArray}:`);
+  // console.log(invExtracted);
+  // console.log(`parts NOT in ${colorArray}:`);
+  // console.log(invRemainder);
+  return [invExtracted, invRemainder];
+}
+
+export function split_kit_trim_core(xmlKit, trimColorArray) {
+  const kit = pushToInventory(xmlKit, [], 1);
+  const [trim, core] = split_kit(kit, trimColorArray);
+  return [trim, core];
+}
+
 export function createOrderList(inventory) {
   let ol = inventory.filter( (item) => item[2] < 0).map( (item) => [ item[0], item[1], -item[2] ] );
   if(ol.length === 0){

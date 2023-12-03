@@ -10,4 +10,6 @@ export const alsoKnownAs = [
  ["3004", " 93792"], // 1x2 brick various bottom supports
  ["14769", "83056"], // 2x2 round tile
  ["15573", "3794b"], // Plate Special 1 x 2 with 1 Stud with Groove (Jumper)
+ ["32064","32064a", "32064b", "32064c", "32064d", ], // Technic, Brick 1 x 2 with Axle Hole
+ ["61678", "11153", "63971", "66141", "66141", "67118"], // Slope, Curved 4 x 1
 ]
